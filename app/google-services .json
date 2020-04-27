@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "410925977502",
+    "firebase_url": "https://lesbiantv-fbb60.firebaseio.com",
+    "project_id": "lesbiantv-fbb60",
+    "storage_bucket": "lesbiantv-fbb60.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410925977502:android:cc6740e67d85d63279508f",
+        "android_client_info": {
+          "package_name": "com.education.lesbiantv"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410925977502-r6ekiut74ggjiccs7s82ukj15cl9g0qa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATYgRKRLDcr-LR6nvIigQOtdvnpcGJaCE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410925977502-r6ekiut74ggjiccs7s82ukj15cl9g0qa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
