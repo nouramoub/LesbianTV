@@ -11,7 +11,7 @@ import android.widget.GridView;
 public class Listofmovies extends AppCompatActivity {
     GridView simpleGrid;
     int logos[] = {R.drawable.logo1};
-    int videos[] = {R.raw.without};
+    String videos[] = {"https://www.veoh.com/watch/v142017589H86pF2YP"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

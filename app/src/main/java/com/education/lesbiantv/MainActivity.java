@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.MediaController;
@@ -16,15 +17,16 @@ public class MainActivity extends AppCompatActivity {
 
     private VideoView videoView;
     private ImageButton btnplaypause;
-
     private String VideoUrl ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent intent=getIntent();
-        VideoUrl ="android.resource://" + getPackageName() + "/" + intent.getIntExtra("video", 0);
-
+        //VideoUrl ="android.resource://" + getPackageName() + "/" + intent.getIntExtra("video", 0);
+        VideoUrl= intent.getStringExtra("video");
+        Log.d("VideoUrl", "??");
 
         videoView = (VideoView) findViewById(R.id.video);
         btnplaypause = (ImageButton) findViewById(R.id.play);
@@ -33,11 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         Uri uri = Uri.parse(VideoUrl);
 
-
-
         videoView.setMediaController(mediaController);
-        videoView.setVideoURI(uri);
-
+        videoView.setVideoPath(VideoUrl);
         videoView.start();
 
     }
