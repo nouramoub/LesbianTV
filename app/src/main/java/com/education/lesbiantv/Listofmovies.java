@@ -50,18 +50,12 @@ public class Listofmovies extends AppCompatActivity {
         GridView rcycl = (GridView) findViewById(R.id.grid);
         RecyclerViewAdapter customAdapter = new RecyclerViewAdapter(getApplicationContext(), movies);
         rcycl.setAdapter(customAdapter);
-        rcycl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //rcycl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            //@Override
+           // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // set an Intent to Another Activity
-                Intent intent = new Intent(Listofmovies.this, MovieActivity.class);
-                intent.putExtra("video", movies.get(position).getUrl());
-                intent.putExtra("title",movies.get(position).getTitle());
-                // put image data in Intent
-                startActivity(intent);
-                Toast.makeText(Listofmovies.this,"test",
-                        Toast.LENGTH_SHORT).show();            }
-        });
+                //
+        //});
         //simpleGrid = (GridView) findViewById(R.id.grid);
         //CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), logos);
         //simpleGrid.setAdapter(customAdapter);

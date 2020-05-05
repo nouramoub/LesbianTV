@@ -40,14 +40,29 @@ public class RecyclerViewAdapter extends BaseAdapter {
         return 0;
     }
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
         view = inflter.inflate(R.layout.card_item, null); // inflate the layout
         ImageView icon = (ImageView) view.findViewById(R.id.img); // get the reference of ImageView
         icon.setImageResource(mDate.get(i).getCategory());
         TextView text = (TextView) view.findViewById(R.id.movie_title);
         text.setText(mDate.get(i).getTitle());
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MovieActivity.class);
+                intent.putExtra("video", mDate.get(i).getUrl());
+                intent.putExtra("title",mDate.get(i).getTitle());
+                mContext.startActivity(intent);
+
+
+            }
         // set logo images
+
+
+        });
         return view;
     }
+
+
 
 }
