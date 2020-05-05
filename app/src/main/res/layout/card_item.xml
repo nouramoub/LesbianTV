@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="190dp"
+    android:layout_height="190dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="5dp"
+    android:id="@+id/crdview"
+    android:clickable="true"
+    android:padding="0dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:layout_constraintCircleRadius="4dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:scaleType="centerCrop"
+            android:background="#2e2327 "
+            />
+        <TextView
+            android:id="@+id/movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Movie title"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:textColor="#2e2327"
+
+            />
+    </LinearLayout>
+
+</GridLayout>
