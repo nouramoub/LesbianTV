@@ -66,12 +66,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder>{
         ImageView movie_image ;
         RelativeLayout relativeLayout;
 
-
-
-
-
-
-
         public MyViewHolder(View itemView) {
             super(itemView);
 

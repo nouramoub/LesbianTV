@@ -6,26 +6,22 @@
     android:layout_height="wrap_content"
     android:background="@drawable/background"
     tools:context=".Listofmovies">
-    
 
-
-    <ScrollView
-        android:id="@+id/scrl"
-        android:layout_width="match_parent"
-        android:layout_height="673dp"
-       >
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/rcycl"
+    <!--
+        <ScrollView
+            android:id="@+id/scrl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="16dp"
-            ></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="673dp"> no need for the scrollview
+    -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcycl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp" />
 
-    </ScrollView>
+    <!-- </ScrollView>-->
 
 </RelativeLayout>
