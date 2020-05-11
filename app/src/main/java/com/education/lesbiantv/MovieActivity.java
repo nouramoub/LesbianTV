@@ -31,10 +31,10 @@ public class MovieActivity extends YouTubeBaseActivity {
         setContentView(R.layout.activity_movie);
         play = (Button) findViewById(R.id.button);
         youTubePlayerView = (YouTubePlayerView) findViewById(R.id.view);
-        Intent intent=getIntent();
-        VideoUrl= intent.getStringExtra("video");
+        Intent intent = getIntent();
+        VideoUrl= intent.getStringExtra("url");
         text = (TextView) findViewById(R.id.textView);
-        text.setText(intent.getStringExtra("title"));
+        text.setText(intent.getStringExtra("description"));
 
 
         mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {

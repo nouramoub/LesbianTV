@@ -7,7 +7,10 @@
     android:layout_height="match_parent"
     tools:context=".MovieActivity">
 
-
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrl">
     <view
         android:id="@+id/view"
         class="com.google.android.youtube.player.YouTubePlayerView"
@@ -38,5 +41,6 @@
         android:layout_marginBottom="89dp"
         android:layout_below="@+id/button"
         android:text="TextView" />
+</androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

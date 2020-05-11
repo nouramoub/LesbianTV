@@ -1,31 +1,41 @@
 package com.education.lesbiantv;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Listofmovies extends AppCompatActivity {
-    //GridView simpleGrid;
-    //int logos[] = {R.drawable.logo1};
-    //String videos[] = {"https://www.veoh.com/watch/v142017589H86pF2YP"};
-    List<Movie> movies;
+    private RecyclerView recyclerView ;
+    private ArrayList<Movie> movies;
 
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listofmovies);
 
-        movies = new ArrayList<>();
+
+
+
+
+        movies = new ArrayList<>() ;
+        recyclerView = findViewById(R.id.rcycl);
         movies.add(new Movie("Without", R.drawable.logo,"WlmYVv880GE","A University of North Carolina. School of the Arts. School of Filmmaking. Student Production\n" +
                 "\n" +
                 "Starring\n" +
@@ -43,30 +53,18 @@ public class Listofmovies extends AppCompatActivity {
                 "\n" +
                 "1 in 10,000 is a three part mini-series that tackles the concept of purpose, love, and soulmates.\n"));
         movies.add(new Movie("HomeComing", R.drawable.homecoming,"ANWpY0eIKKk","After many years away, a young woman comes home to her small town for her high school reunion and catches up with her best friend.\n"));
+        movies.add(new Movie("You",R.drawable.you,"QsEL9b8mvBQ","Synopsis: Kristen is a photographer who is opening her first ever gallery show. Her girlfriend, Samantha and all her friends are there. Everything was going as planned except when her parents randomly shows up on her gallery show, which was full of queer art. Deprived of this knowledge of their daughter's sexuality, her parents confront her. Kristen is caught between a chaos of her parents and her girlfriend, and on top of it all while trying to hold her composure for the other guests in her gallery which eventually triggers her anxiety. How will she hold up?\n"));
+        movies.add(new Movie("Invite you",R.drawable.invite_you,"CQckSkRUN30","Parched Productions ~ view our features on Amazon: Parched, Parched 2: Hangry, Blood Falls - and Reap (coming soon)\n"));
+        movies.add(new Movie("traumtänzerin ",R.drawable.traumtnzerin,"B1bc50Ckz4s","Es ist soweit. Endlich kann ich ihn euch zeigen! Im Herbst 2018 drehte ich zusammen mit einem wundervollen Team meinen Bachelorfilm. 1 1/2 Jahre später darf ich ihn nun auf Youtube veröffentlichen! "));
+        movies.add(new Movie("AVA",R.drawable.ava,"LfBZRbx7MtA","\"In a gay conversion center, a young girl risks everything to save her new friend.\" An updated, 2019 version of my short film! I really took into consideration all of the great feedback and constructive criticism from the 2018 release of this film"));
+        movies.add(new Movie("Pulse",R.drawable.pulse,"wU1U28kZl2c","A Double A Films production, directed by Alejandra Hou, based on a true event. In honor of the LGBTQ+ community who deserves to be treated same as others because we are all the same."));
 
 
+        Adapter myadapter = new Adapter(this,movies) ;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(myadapter);
 
-
-        GridView rcycl = (GridView) findViewById(R.id.grid);
-        RecyclerViewAdapter customAdapter = new RecyclerViewAdapter(getApplicationContext(), movies);
-        rcycl.setAdapter(customAdapter);
-        //rcycl.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            //@Override
-           // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // set an Intent to Another Activity
-                //
-        //});
-        //simpleGrid = (GridView) findViewById(R.id.grid);
-        //CustomAdapter customAdapter = new CustomAdapter(getApplicationContext(), logos);
-        //simpleGrid.setAdapter(customAdapter);
-        //simpleGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-           // @Override
-            //public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // set an Intent to Another Activity
-               // Intent intent = new Intent(Listofmovies.this, MainActivity.class);
-                //intent.putExtra("video", videos[position]);// put image data in Intent
-               // startActivity(intent); // start Intent
-            //}
-        //});
     }
+
+
 }
